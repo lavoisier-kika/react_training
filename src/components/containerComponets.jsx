@@ -15,8 +15,11 @@ import Services from "./services/services";
         <Header />
         <Banner />
         </div>
-        <Apropos />
+    
+        <Apropos/>
+        {/* ici le contenus sont des cards conteant une image du text et un bouton alors j'ai eu un peu du mal à le structure et commebt en construire pour la réutilisabilité */}
         <Services />
+        {/* De même que dans la réalisation il y a beaucouo que je vien de laisser mainteant je ne sais pas comment faire */}
          <Realisation />
          <Contact />
          <Footer />

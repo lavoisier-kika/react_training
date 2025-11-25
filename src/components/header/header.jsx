@@ -4,11 +4,11 @@ export const Header = ()=>{
 
     return(
         <> 
-         <div className="w-full h-[100px] flex justify-between items-center pt-6 mt-1 px-12" >
+         <div className="w-full h-[100px] flex justify-between items-center pt-6 px-12" >
             <a href=""> <img src={logo}  alt="" className="w-[200px] pt-4" /></a>
             <div className="flex items-center gap-20"> 
             <ul className="flex items-center gap-8" >
-                <li><a href="" className="font-bold text-[20px] hover:text-blue-900 hover:bg-amber-500 hover:rounded-[2px] ">Accueil</a></li>
+                <li><a href="" className="font-bold text-[20px] hover:text-blue-900  hover:bg-amber-500 hover:rounded-[2px] ">Accueil</a></li>
                 <li><a href="" className="font-bold text-[20px] hover:text-blue-900  hover:bg-amber-500 hover:rounded-[2px]" >Services</a></li>
                 <li><a href="" className="font-bold text-[20px] hover:text-blue-900  hover:bg-amber-500 hover:rounded-[2px]" >Apropos</a></li>
                 <li><a href="" className="font-bold text-[20px] hover:text-blue-900  hover:bg-amber-500 hover:rounded-[2px]" >Shop</a></li>

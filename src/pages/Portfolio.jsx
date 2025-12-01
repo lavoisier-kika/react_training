@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageModal from '../components/ImageModal';
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
 import colonie from '../assets/colonie-ECEDEN.jpg'
@@ -10,6 +11,7 @@ import mgl from '../assets/MGL-GOAL-SUPRA.jpg'
 
 const Portfolio = () => {
     const [filter, setFilter] = useState('All');
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const projects = [
         {
@@ -113,10 +115,19 @@ const Portfolio = () => {
                     }}
                 >
                     {filteredProjects.map(project => (
-                        <ProjectCard key={project.id} project={project} />
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            onImageClick={setSelectedImage}
+                        />
                     ))}
                 </motion.div>
             </div>
+            <ImageModal
+                isOpen={!!selectedImage}
+                onClose={() => setSelectedImage(null)}
+                imageSrc={selectedImage}
+            />
         </div>
     );
 };

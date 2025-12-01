@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ImageModal from '../components/ImageModal';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import Button from '../components/Button';
@@ -8,6 +9,8 @@ import crf from '../assets/CRF-CRF.jpg'
 
 
 const Home = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     // Dummy data for featured projects
     const featuredProjects = [
         {
@@ -65,7 +68,11 @@ const Home = () => {
                         gap: '2rem'
                     }}>
                         {featuredProjects.map(project => (
-                            <ProjectCard key={project.id} project={project} />
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                onImageClick={setSelectedImage}
+                            />
                         ))}
                     </div>
                 </div>
@@ -138,6 +145,13 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+
+            <ImageModal
+                isOpen={!!selectedImage}
+                onClose={() => setSelectedImage(null)}
+                imageSrc={selectedImage}
+            />
         </>
     );
 };

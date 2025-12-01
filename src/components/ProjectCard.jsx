@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onImageClick }) => {
     const { id, title, category, image, year } = project;
 
     return (
@@ -22,8 +22,17 @@ const ProjectCard = ({ project }) => {
                     overflow: 'hidden',
                     marginBottom: '1.5rem',
                     aspectRatio: '4/3',
-                    backgroundColor: 'var(--bg-card)'
-                }}>
+                    backgroundColor: 'var(--bg-card)',
+                    cursor: onImageClick ? 'zoom-in' : 'default'
+                }}
+                    onClick={(e) => {
+                        if (onImageClick) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            onImageClick(project.image);
+                        }
+                    }}
+                >
                     <motion.img
                         src={image}
                         alt={title}
